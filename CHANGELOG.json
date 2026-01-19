@@ -1,0 +1,102 @@
+{
+  "ir_version": "1.0",
+  "project": "omnivoice-twilio",
+  "repository": "https://github.com/agentplexus/omnivoice-twilio",
+  "versioning": "semver",
+  "commit_convention": "conventional",
+  "releases": [
+    {
+      "version": "v0.2.0",
+      "date": "2026-01-18",
+      "changed": [
+        {
+          "description": "Switch to official twilio-go SDK, replacing custom HTTP client implementation",
+          "commit": "57f016899c3bb8616f2b088a529574790767ed91",
+          "breaking": true
+        },
+        {
+          "description": "Config struct: removed `BaseURL` and `HTTPClient` fields",
+          "commit": "57f016899c3bb8616f2b088a529574790767ed91",
+          "breaking": true
+        },
+        {
+          "description": "Call struct: removed `Price`, `PriceUnit`, `AnsweredBy`, `CallerName`, `URI`, `DateCreated`, `DateUpdated` fields",
+          "commit": "57f016899c3bb8616f2b088a529574790767ed91",
+          "breaking": true
+        },
+        {
+          "description": "PhoneNumber struct: changed `Capabilities` nested struct to flat `VoiceCapable`, `SMSCapable`, `MMSCapable` booleans",
+          "commit": "57f016899c3bb8616f2b088a529574790767ed91",
+          "breaking": true
+        }
+      ],
+      "removed": [
+        {
+          "description": "`PhoneNumberList` and `Error` types",
+          "commit": "57f016899c3bb8616f2b088a529574790767ed91",
+          "breaking": true
+        }
+      ],
+      "added": [
+        {
+          "description": "`RestClient()` method to expose underlying Twilio SDK client",
+          "commit": "57f016899c3bb8616f2b088a529574790767ed91"
+        }
+      ],
+      "dependencies": [
+        {
+          "description": "Add `github.com/twilio/twilio-go` v1.29.1",
+          "commit": "57f016899c3bb8616f2b088a529574790767ed91"
+        }
+      ]
+    },
+    {
+      "version": "v0.1.0",
+      "date": "2025-12-28",
+      "added": [
+        {
+          "description": "Initial omnivoice-twilio provider implementation",
+          "commit": "b8fc59dd8a3aa1e1641bc9d66385d491a346a2bf"
+        },
+        {
+          "description": "Twilio client with `MakeCall`, `GetCall`, `UpdateCall`, `HangupCall`, `ListPhoneNumbers` methods",
+          "commit": "b8fc59dd8a3aa1e1641bc9d66385d491a346a2bf"
+        },
+        {
+          "description": "WebSocket transport for Twilio Media Streams",
+          "commit": "b8fc59dd8a3aa1e1641bc9d66385d491a346a2bf"
+        },
+        {
+          "description": "Call system integration with omnivoice interfaces",
+          "commit": "b8fc59dd8a3aa1e1641bc9d66385d491a346a2bf"
+        }
+      ],
+      "documentation": [
+        {
+          "description": "Add README with badges",
+          "commit": "7e19015af649f043d96d5a068285b8abf6966f98"
+        }
+      ],
+      "build": [
+        {
+          "description": "Add CI workflows, gitignore, and license",
+          "commit": "83b9572f33197f6a0cf81026f1f5c3f3eebaebb3"
+        },
+        {
+          "description": "Update Go versions in go.mod",
+          "commit": "edea6dfdf0c71344961f0f662ff1f153169f1524"
+        },
+        {
+          "description": "Update Go dependencies",
+          "commit": "555cb543185526f1a538ecd2ed3fcb0678dc8bdf"
+        }
+      ],
+      "fixed": [
+        {
+          "description": "Fix struct and const field alignment",
+          "commit": "431bfc509bd9fcebf8f74cc210b111a194c964e0"
+        }
+      ]
+    }
+  ]
+}
