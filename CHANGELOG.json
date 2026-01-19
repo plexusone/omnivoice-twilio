@@ -10,36 +10,7 @@
       "date": "2026-01-18",
       "changed": [
         {
-          "description": "Switch to official twilio-go SDK, replacing custom HTTP client implementation",
-          "commit": "57f016899c3bb8616f2b088a529574790767ed91",
-          "breaking": true
-        },
-        {
-          "description": "Config struct: removed `BaseURL` and `HTTPClient` fields",
-          "commit": "57f016899c3bb8616f2b088a529574790767ed91",
-          "breaking": true
-        },
-        {
-          "description": "Call struct: removed `Price`, `PriceUnit`, `AnsweredBy`, `CallerName`, `URI`, `DateCreated`, `DateUpdated` fields",
-          "commit": "57f016899c3bb8616f2b088a529574790767ed91",
-          "breaking": true
-        },
-        {
-          "description": "PhoneNumber struct: changed `Capabilities` nested struct to flat `VoiceCapable`, `SMSCapable`, `MMSCapable` booleans",
-          "commit": "57f016899c3bb8616f2b088a529574790767ed91",
-          "breaking": true
-        }
-      ],
-      "removed": [
-        {
-          "description": "`PhoneNumberList` and `Error` types",
-          "commit": "57f016899c3bb8616f2b088a529574790767ed91",
-          "breaking": true
-        }
-      ],
-      "added": [
-        {
-          "description": "`RestClient()` method to expose underlying Twilio SDK client",
+          "description": "Internal: switch to official twilio-go SDK, replacing custom HTTP client implementation",
           "commit": "57f016899c3bb8616f2b088a529574790767ed91"
         }
       ],
