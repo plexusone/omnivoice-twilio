@@ -6,7 +6,7 @@
   "commit_convention": "conventional",
   "releases": [
     {
-      "version": "v0.2.0",
+      "version": "v0.1.1",
       "date": "2026-01-18",
       "changed": [
         {
