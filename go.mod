@@ -3,7 +3,7 @@ module github.com/agentplexus/omnivoice-twilio
 go 1.24.11
 
 require (
-	github.com/agentplexus/omnivoice v0.3.0
+	github.com/agentplexus/omnivoice v0.4.3
 	github.com/gorilla/websocket v1.5.3
 	github.com/twilio/twilio-go v1.30.1
 )
