@@ -19,7 +19,7 @@ type Client struct {
 // Config configures the Twilio client.
 type Config struct {
 	AccountSID string
-	AuthToken  string
+	AuthToken  string //nolint:gosec // G117: field intentionally stores credential
 }
 
 // New creates a new Twilio client using the official SDK.

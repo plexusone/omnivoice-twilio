@@ -226,6 +226,41 @@ provider, _ := callsystem.New(
 - `Google.en-US-Standard-A` through `D`
 - `Google.en-US-Wavenet-A` through `D`
 
+## Testing
+
+Tests use the [OmniVoice conformance test](https://github.com/agentplexus/omnivoice) framework and are gated behind the `integration` build tag.
+
+### Run All Tests
+
+```bash
+export TWILIO_ACCOUNT_SID="ACxxxx"
+export TWILIO_AUTH_TOKEN="xxxx"
+export TWILIO_PHONE_NUMBER="+15551234567"   # Your Twilio number (caller ID)
+export TWILIO_TO_NUMBER="+15559876543"      # Recipient number for call tests
+
+go test -v -tags=integration ./...
+```
+
+### Interface & Behavior Tests Only (No Credentials)
+
+TTS, STT, and transport interface/behavior tests run without credentials:
+
+```bash
+go test -v -tags=integration ./tts/ ./stt/ ./transport/
+```
+
+### Call Lifecycle Tests Only
+
+```bash
+export TWILIO_ACCOUNT_SID="ACxxxx"
+export TWILIO_AUTH_TOKEN="xxxx"
+export TWILIO_PHONE_NUMBER="+15551234567"
+export TWILIO_TO_NUMBER="+15559876543"
+
+go test -v -tags=integration -run TestMakeCall ./internal/client/
+go test -v -tags=integration -run TestConformance/Integration ./callsystem/
+```
+
 ## Architecture
 
 ```

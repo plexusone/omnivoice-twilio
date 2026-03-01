@@ -8,7 +8,7 @@
 //
 // # Installation
 //
-//	go get github.com/agentplexus/omnivoice-twilio
+//	go get github.com/plexusone/omnivoice-twilio
 //
 // # Environment Variables
 //
@@ -18,8 +18,8 @@
 // # Quick Start
 //
 //	import (
-//	    "github.com/agentplexus/omnivoice-twilio/callsystem"
-//	    "github.com/agentplexus/omnivoice-twilio/transport"
+//	    "github.com/plexusone/omnivoice-twilio/callsystem"
+//	    "github.com/plexusone/omnivoice-twilio/transport"
 //	)
 //
 //	// Create call system for PSTN calls

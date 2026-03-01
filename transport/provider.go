@@ -11,8 +11,8 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/agentplexus/omnivoice/transport"
 	"github.com/gorilla/websocket"
+	"github.com/plexusone/omnivoice-core/transport"
 )
 
 // Verify interface compliance at compile time.

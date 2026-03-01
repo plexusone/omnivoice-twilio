@@ -13,7 +13,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/agentplexus/omnivoice/tts"
+	"github.com/plexusone/omnivoice-core/tts"
 )
 
 // Verify interface compliance at compile time.
@@ -75,6 +75,10 @@ func (p *Provider) Name() string {
 // Note: Twilio TTS is designed for use within calls via TwiML.
 // This method generates TwiML that can be used with Twilio's API.
 func (p *Provider) Synthesize(ctx context.Context, text string, config tts.SynthesisConfig) (*tts.SynthesisResult, error) {
+	if err := ctx.Err(); err != nil {
+		return nil, err
+	}
+
 	// Generate TwiML
 	twiml := p.generateTwiML(text, config)
 
@@ -139,7 +143,7 @@ func (p *Provider) GetVoice(ctx context.Context, voiceID string) (*tts.Voice, er
 		}
 	}
 
-	return nil, fmt.Errorf("voice not found: %s", voiceID)
+	return nil, tts.ErrVoiceNotFound
 }
 
 // GenerateTwiML generates TwiML for text-to-speech.

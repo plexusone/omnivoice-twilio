@@ -7,11 +7,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/agentplexus/omnivoice-twilio/internal/client"
-	"github.com/agentplexus/omnivoice-twilio/transport"
-	"github.com/agentplexus/omnivoice/agent"
-	"github.com/agentplexus/omnivoice/callsystem"
-	omnitransport "github.com/agentplexus/omnivoice/transport"
+	"github.com/plexusone/omnivoice-core/agent"
+	"github.com/plexusone/omnivoice-core/callsystem"
+	omnitransport "github.com/plexusone/omnivoice-core/transport"
+	"github.com/plexusone/omnivoice-twilio/internal/client"
+	"github.com/plexusone/omnivoice-twilio/transport"
 )
 
 // Verify interface compliance at compile time.
