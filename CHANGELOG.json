@@ -1,10 +1,27 @@
 {
-  "ir_version": "1.0",
+  "irVersion": "1.0",
   "project": "omnivoice-twilio",
-  "repository": "https://github.com/agentplexus/omnivoice-twilio",
+  "repository": "https://github.com/plexusone/omnivoice-twilio",
   "versioning": "semver",
-  "commit_convention": "conventional",
+  "commitConvention": "conventional",
+  "maintainers": ["johncwang@gmail.com"],
   "releases": [
+    {
+      "version": "v0.2.0",
+      "date": "2026-02-28",
+      "highlights": [
+        { "description": "Organization rename from agentplexus to plexusone" }
+      ],
+      "changed": [
+        { "description": "**Breaking**: Module path changed from `github.com/agentplexus/omnivoice-twilio` to `github.com/plexusone/omnivoice-twilio`", "commit": "be76a45" }
+      ],
+      "tests": [
+        { "description": "Add conformance tests for CallSystem, STT, TTS, and Transport providers", "commit": "be76a45" }
+      ],
+      "dependencies": [
+        { "description": "Update to `github.com/plexusone/omnivoice-core` v0.5.0 (was agentplexus/omnivoice)", "commit": "be76a45" }
+      ]
+    },
     {
       "version": "v0.1.1",
       "date": "2026-01-18",
