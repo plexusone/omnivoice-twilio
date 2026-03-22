@@ -7,6 +7,29 @@
   "maintainers": ["johncwang@gmail.com"],
   "releases": [
     {
+      "version": "v0.3.0",
+      "date": "2026-03-22",
+      "highlights": [
+        { "description": "SMS messaging support via SMSProvider interface" }
+      ],
+      "added": [
+        { "description": "`SendSMS` and `SendSMSFrom` methods on CallSystem Provider", "commit": "025ff35" },
+        { "description": "Provider now implements `callsystem.SMSProvider` interface", "commit": "025ff35" },
+        { "description": "`Message` type and `SendSMS` on internal Twilio client", "commit": "025ff35" }
+      ],
+      "documentation": [
+        { "description": "Add SMS usage example to README", "commit": "e341efb" },
+        { "description": "Add UTF-8 icons to Features section", "commit": "e341efb" },
+        { "description": "Update import paths from agentplexus to plexusone", "commit": "e341efb" }
+      ],
+      "build": [
+        { "description": "Update to shared CI workflow files", "commit": "b643794" }
+      ],
+      "dependencies": [
+        { "description": "Bump `github.com/twilio/twilio-go` from 1.30.2 to 1.30.3", "commit": "fced0f9" }
+      ]
+    },
+    {
       "version": "v0.2.0",
       "date": "2026-02-28",
       "highlights": [

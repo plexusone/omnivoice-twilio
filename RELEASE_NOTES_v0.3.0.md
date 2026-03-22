@@ -1,0 +1,65 @@
+# Release Notes: v0.3.0
+
+**Release Date:** 2026-03-22
+
+## Highlights
+
+SMS messaging support via the `callsystem.SMSProvider` interface.
+
+## What's New
+
+### SMS Support
+
+The Twilio Provider now implements `callsystem.SMSProvider` from omnivoice-core, enabling SMS messaging alongside voice calls.
+
+```go
+import "github.com/plexusone/omnivoice-twilio/callsystem"
+
+// Create provider with default phone number
+provider, _ := callsystem.New(
+    callsystem.WithPhoneNumber("+15551234567"),
+)
+
+// Send SMS using default number
+msg, _ := provider.SendSMS(ctx, "+15559876543", "Hello from OmniVoice!")
+
+// Send SMS from specific number
+msg, _ = provider.SendSMSFrom(ctx, "+15559876543", "+15551234567", "Hello!")
+```
+
+### New Methods
+
+- `SendSMS(ctx, to, body)` - Send SMS using the provider's default phone number
+- `SendSMSFrom(ctx, to, from, body)` - Send SMS from a specific phone number
+
+### Interface Compliance
+
+The Provider now satisfies both interfaces:
+
+```go
+var (
+    _ callsystem.CallSystem  = (*Provider)(nil)
+    _ callsystem.SMSProvider = (*Provider)(nil)
+)
+```
+
+## Dependencies
+
+- Updated `github.com/twilio/twilio-go` from 1.30.2 to 1.30.3
+
+## Upgrade Guide
+
+This release is backward compatible. No changes required for existing code.
+
+To use the new SMS functionality:
+
+1. Update your dependency:
+   ```bash
+   go get github.com/plexusone/omnivoice-twilio@v0.3.0
+   ```
+
+2. Use `SendSMS` or `SendSMSFrom` methods on your existing Provider instance.
+
+## Full Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for the complete list of changes.
