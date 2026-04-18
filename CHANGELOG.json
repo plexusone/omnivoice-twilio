@@ -15,10 +15,10 @@
       ],
       "changed": [
         { "description": "**Breaking**: Module path changed from `github.com/plexusone/omnivoice-twilio` to `github.com/plexusone/twilio-go`", "commit": "932a039" },
-        { "description": "**Breaking**: Twilio client moved from `internal/client` to exported `client` package", "commit": "932a039" },
         { "description": "**Breaking**: OmniVoice providers moved to `omnivoice/` subdirectory", "commit": "932a039" }
       ],
       "added": [
+        { "description": "Exported Twilio REST client at `client/` package (previously internal)", "commit": "932a039" },
         { "description": "OmniChat SMS provider implementing `provider.Provider` interface", "commit": "932a039" },
         { "description": "Webhook handler for receiving inbound SMS via Twilio webhooks", "commit": "932a039" }
       ],
