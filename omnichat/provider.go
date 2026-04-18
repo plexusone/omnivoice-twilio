@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/plexusone/omnichat/provider"
+
 	"github.com/plexusone/twilio-go/client"
 )
 
@@ -225,12 +226,12 @@ func (p *Provider) handleWebhook(w http.ResponseWriter, r *http.Request) {
 			Content:      body,
 			Timestamp:    time.Now(),
 			Metadata: map[string]any{
-				"to":          to,
-				"account_sid": accountSID,
-				"num_media":   r.FormValue("NumMedia"),
-				"from_city":   r.FormValue("FromCity"),
-				"from_state":  r.FormValue("FromState"),
-				"from_zip":    r.FormValue("FromZip"),
+				"to":           to,
+				"account_sid":  accountSID,
+				"num_media":    r.FormValue("NumMedia"),
+				"from_city":    r.FormValue("FromCity"),
+				"from_state":   r.FormValue("FromState"),
+				"from_zip":     r.FormValue("FromZip"),
 				"from_country": r.FormValue("FromCountry"),
 			},
 		}
