@@ -1,9 +1,10 @@
-module github.com/plexusone/omnivoice-twilio
+module github.com/plexusone/twilio-go
 
 go 1.25.0
 
 require (
 	github.com/gorilla/websocket v1.5.3
+	github.com/plexusone/omnichat v0.3.0
 	github.com/plexusone/omnivoice-core v0.8.0
 	github.com/twilio/twilio-go v1.30.5
 )

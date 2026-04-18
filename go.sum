@@ -10,6 +10,8 @@ github.com/localtunnel/go-localtunnel v0.0.0-20170326223115-8a804488f275 h1:IZyc
 github.com/localtunnel/go-localtunnel v0.0.0-20170326223115-8a804488f275/go.mod h1:zt6UU74K6Z6oMOYJbJzYpYucqdcQwSMPBEdSvGiaUMw=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/plexusone/omnichat v0.3.0 h1:5gVD0aU2ZUSC2eqlN6uBe0TBo0uuJungHqnNiiVgObk=
+github.com/plexusone/omnichat v0.3.0/go.mod h1:3niGB8KREGwKCnLeKGjn/M+8zZV+fwEHGkjsRQJyNKQ=
 github.com/plexusone/omnivoice-core v0.8.0 h1:vmxP3RFqSe2SQajD3ZsxEjwZg4y7Lv5fMGV4aPZimYI=
 github.com/plexusone/omnivoice-core v0.8.0/go.mod h1:oFa3AOIKDv9lMd7M0cG1HBZOBKK6H9GAVhi7aiR9nYA=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

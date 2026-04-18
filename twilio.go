@@ -1,36 +1,40 @@
-// Package twilio provides OmniVoice provider implementations using the Twilio API.
+// Package twilio provides a Go SDK for Twilio with adapters for omnichat and omnivoice.
 //
-// This package implements OmniVoice interfaces for voice applications:
-//   - callsystem.CallSystem: PSTN call handling (incoming/outgoing)
-//   - transport.Transport: Twilio Media Streams for real-time audio
-//   - tts.Provider: Text-to-speech via Twilio's Say verb
-//   - stt.Provider: Speech-to-text via Twilio's Gather/Recognition
+// This package implements:
+//   - omnichat.Provider: SMS messaging
+//   - omnivoice interfaces: callsystem, transport, tts, stt
 //
 // # Installation
 //
-//	go get github.com/plexusone/omnivoice-twilio
+//	go get github.com/plexusone/twilio-go
 //
 // # Environment Variables
 //
 //	TWILIO_ACCOUNT_SID - Your Twilio Account SID
 //	TWILIO_AUTH_TOKEN  - Your Twilio Auth Token
 //
-// # Quick Start
+// # Quick Start - SMS (omnichat)
+//
+//	import "github.com/plexusone/twilio-go/omnichat"
+//
+//	provider, _ := omnichat.New(
+//	    omnichat.WithPhoneNumber("+1234567890"),
+//	)
+//	provider.Send(ctx, "+1987654321", provider.OutgoingMessage{Content: "Hello!"})
+//
+// # Quick Start - Voice (omnivoice)
 //
 //	import (
-//	    "github.com/plexusone/omnivoice-twilio/callsystem"
-//	    "github.com/plexusone/omnivoice-twilio/transport"
+//	    "github.com/plexusone/twilio-go/omnivoice/callsystem"
+//	    "github.com/plexusone/twilio-go/omnivoice/transport"
 //	)
 //
-//	// Create call system for PSTN calls
 //	cs, _ := callsystem.New()
-//
-//	// Create transport for audio streaming
 //	tr, _ := transport.New()
 package twilio
 
 // Version is the SDK version.
-const Version = "0.1.0"
+const Version = "0.4.0"
 
 // ProviderName is the name used to identify this provider in OmniVoice.
 const ProviderName = "twilio"
