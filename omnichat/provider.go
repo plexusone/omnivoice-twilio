@@ -194,17 +194,19 @@ func (p *Provider) handleWebhook(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Limit request body size to prevent memory exhaustion (G120 fix)
+	r.Body = http.MaxBytesReader(w, r.Body, 64<<10) // 64KB - Twilio webhooks are typically small
 	if err := r.ParseForm(); err != nil {
 		http.Error(w, "failed to parse form", http.StatusBadRequest)
 		return
 	}
 
-	// Extract message data from Twilio webhook
-	messageSID := r.FormValue("MessageSid")
-	from := r.FormValue("From")
-	to := r.FormValue("To")
-	body := r.FormValue("Body")
-	accountSID := r.FormValue("AccountSid")
+	// Extract message data from Twilio webhook (use r.Form.Get per G120)
+	messageSID := r.Form.Get("MessageSid")
+	from := r.Form.Get("From")
+	to := r.Form.Get("To")
+	body := r.Form.Get("Body")
+	accountSID := r.Form.Get("AccountSid")
 
 	if messageSID == "" || from == "" {
 		http.Error(w, "missing required fields", http.StatusBadRequest)
@@ -228,11 +230,11 @@ func (p *Provider) handleWebhook(w http.ResponseWriter, r *http.Request) {
 			Metadata: map[string]any{
 				"to":           to,
 				"account_sid":  accountSID,
-				"num_media":    r.FormValue("NumMedia"),
-				"from_city":    r.FormValue("FromCity"),
-				"from_state":   r.FormValue("FromState"),
-				"from_zip":     r.FormValue("FromZip"),
-				"from_country": r.FormValue("FromCountry"),
+				"num_media":    r.Form.Get("NumMedia"),
+				"from_city":    r.Form.Get("FromCity"),
+				"from_state":   r.Form.Get("FromState"),
+				"from_zip":     r.Form.Get("FromZip"),
+				"from_country": r.Form.Get("FromCountry"),
 			},
 		}
 
